@@ -19,7 +19,7 @@ Easily update and toggle Balatro mods, save/load mod profiles, and launch straig
 
 ---
 
-## Quick Installation (Release ZIP)
+## Quick Installation
 
 1. **Clone this repo into your Mods parent folder**
 ```bash
