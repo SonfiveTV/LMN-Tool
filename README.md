@@ -21,24 +21,27 @@ Easily update and toggle Balatro mods, save/load mod profiles, and launch straig
 
 ## Quick Installation (Release ZIP)
 
-1. **Download the latest release** from [GitHub Releases](https://github.com/yourusername/LMN-Tool/releases).
+1. **Clone this repo into your Mods parent folder**
+```bash
+git clone https://github.com/SonfiveTV/LMN-Tool.git
+```
 
-2. **Extract the ZIP** into the **parent folder of your `Mods/` directory**, so the structure looks like this:
+The structure should look like this:
 ```
 <Balatro Parent Folder>/
 ├── Mods/
 │ ├── <your installed mods>
-└── tools/
+└── LMN-Tool/
   ├── LMN-Tool.sh
   ├── config.sh
   └── profiles/ # can be empty initially
 ```
 
-3. **Make the scripts executable** (if needed):
+2. **Make the scripts executable** (if needed):
 ```bash
 chmod +x tools/*.sh
 ```
-4. **Run the tool**:
+3. **Run the tool**:
 ``` bash
 ./tools/mod-toggle.sh
 ```
