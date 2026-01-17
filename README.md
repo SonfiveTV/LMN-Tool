@@ -3,9 +3,14 @@
 Easily update and toggle Balatro mods, save/load mod profiles, and launch straight into the game.
 
 ---
+## Requirements
+- Linux (tested on SteamOS / Debian-based distros)
+- git (for updating mods via the manager)
+- bash (default shell)
+- Steam (for launching Balatro, if using the Steam launch method)
+
 
 ## Features
-
 - Toggle mods on/off with a simple menu  
 - Update GitHub-based mods with a single command  
 - Save and load mod profiles for different setups  
@@ -50,3 +55,18 @@ chmod +x tools/*.sh
 **Launch Balatro**: Press `O` to start the game
 
 **Quit**: Press `Q` to exit
+
+> **Note:** Some folders like `lovely`, `Steamodded`, and `smods` are protected and will not show in the mod menu by default.
+
+
+## Configuration
+You can edit `tools/config.sh` to adjust paths, protected mods, update exclusions, or change how Balatro is launched. The default setup works for most Linux users.
+
+## Troubleshooting
+- If the tool does not launch Balatro, ensure Steam is installed and logged in.
+- Make sure the `tools/*.sh` scripts are executable (`chmod +x tools/*.sh`).
+- Git must be installed for updating mods.
+
+
+
+
