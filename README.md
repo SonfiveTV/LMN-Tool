@@ -4,10 +4,8 @@ Easily update and toggle Balatro mods, save/load mod profiles, and launch straig
 
 ---
 ## Requirements
-- Linux (tested on SteamOS)
-- MacOS
+- python
 - git (for updating mods via the manager)
-- bash (default shell)
 
 
 ## Features
@@ -15,16 +13,17 @@ Easily update and toggle Balatro mods, save/load mod profiles, and launch straig
 - Update GitHub-based mods with a single command  
 - Save and load mod profiles for different setups  
 - Launch Balatro directly from the manager  
-- Lightweight and Linux-friendly design  
 
 ---
 
 ## Quick Installation
 
-1. **Clone this repo into your Mods parent folder**
+**(Option 1) Clone this repo into your Mod's parent folder**
 ```bash
 git clone https://github.com/SonfiveTV/LMN-Tool.git
 ```
+
+**(Option 2) Download and extract the latest Release into your Mod's parent folder**
 
 The structure should look like this:
 ```
@@ -32,44 +31,24 @@ The structure should look like this:
 ├── Mods/
 │ ├── <your installed mods>
 └── LMN-Tool/
-  ├── LMN-Tool.sh
-  ├── config.sh
-  └── profiles/ # can be empty initially
+  ├── LMN-Tool.py
+  └── profiles/
 ```
-
-2. **Make the scripts executable** (if needed):
-```bash
-chmod +x LMN-Tool/*.sh
-```
-3. **Run the tool**:
-``` bash
-./LMN-Tool/LMN-Tool.sh
-```
-
-## Usage
-**Toggle mods**: Enter numbers separated by spaces (e.g., `1 4 7`)
-
-**Update mods**: Press `U` to pull updates for GitHub-based mods
-
-**Save profile**: Press `S` to save the current enabled/disabled setup
-
-**Load profile**: Press `L` to select and apply a saved profile
-
-**Launch Balatro**: Press `O` to start the game
-
-**Quit**: Press `Q` to exit
-
-> **Note:** Some folders like `lovely`, `Steamodded`, and `smods` are protected and will not show in the mod menu by default.
-
 
 ## Configuration
-You can edit `LMN-Tool/config.sh` to adjust paths, protected mods, update exclusions, or change how Balatro is launched. The default setup works for most Linux users.
+If your folder setup is the same as shown above, no path configuration should be required, however if you would like to have the tool placed elsewhere you will need to define custom paths in `LMN-Tool.py`
 
-## Troubleshooting
-- If the tool does not launch Balatro, ensure Steam is installed and logged in.
-- Make sure the `LMN-Tool/*.sh` scripts are executable (`chmod +x LMN-Tool/*.sh`).
-- Git must be installed for updating mods.
+`PROTECTED_MODS` is a table containing any mods assumed to always be enabled and/or hidden from the Mods list. By default this includes `lovely`, `Steamodded`, and `smods`.
 
+`UPDATE_EXCLUDE` is a table containing any Mods you don't want the `Update` function to touch 
+
+## Usage
+**Toggle mods**: Enter numbers separated by spaces (e.g., `1 4 7`)<br>
+**Update mods**: Press `U` to pull updates for Git cloned mods<br>
+**Save profile**: Press `S` to save the current setup as a profile<br>
+**Load profile**: Press `L` to select and apply a saved profile<br>
+**Launch Balatro**: Press `O` to launch Balatro<br>
+**Quit**: Press `Q` to exit<br>
 
 
 
