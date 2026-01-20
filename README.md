@@ -4,10 +4,10 @@ Easily update and toggle Balatro mods, save/load mod profiles, and launch straig
 
 ---
 ## Requirements
-- Linux (tested on SteamOS / Debian-based distros)
+- Linux (tested on SteamOS)
+- MacOS
 - git (for updating mods via the manager)
 - bash (default shell)
-- Steam (for launching Balatro, if using the Steam launch method)
 
 
 ## Features

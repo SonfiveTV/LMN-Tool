@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# ===== CONFIG =====
-PARENT_DIR="$(cd "$(dirname "$0")" && pwd)"
-source "$PARENT_DIR/config.sh"
+# ===== BOOTSTRAP =====
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+source "$SCRIPT_DIR/config.sh"
 
 # Ensure profiles folder exists
 mkdir -p "$PROFILES_DIR"
@@ -16,6 +16,7 @@ display_mods() {
 
     mods=()
     i=1
+
     for dir in "$MODS_DIR"/*/; do
         mod="$(basename "$dir")"
 
@@ -92,12 +93,12 @@ load_profile() {
 
     PROFILE="${profiles[$INDEX]}"
 
-    # Disable all first
+    # Disable all
     for MOD in "${mods[@]}"; do
         touch "$MODS_DIR/$MOD/.lovelyignore"
     done
 
-    # Enable listed mods
+    # Enable profile mods
     while read -r MOD; do
         rm -f "$MODS_DIR/$MOD/.lovelyignore"
     done < "$PROFILE"
@@ -120,16 +121,29 @@ run_updater() {
 }
 
 launch_balatro() {
-    case "$LAUNCH_METHOD" in
-        steam)
-            echo "Launching Balatro via Steam..."
-            steam "steam://rungameid/$BALATRO_APPID" >/dev/null 2>&1 &
-            sleep 1
-            ;;
-        *)
-            echo "Unknown launch method: $LAUNCH_METHOD"
-            ;;
-    esac
+    OS_NAME="$(uname)"
+
+    if [[ "$OS_NAME" == "Darwin" ]]; then
+        echo "Launching Balatro (macOS, modded)..."
+
+        LOVELY_SCRIPT="$HOME/Library/Application Support/Steam/steamapps/common/Balatro/run_lovely_macos.sh"
+
+        if [[ ! -f "$LOVELY_SCRIPT" ]]; then
+            echo "ERROR: run_lovely_macos.sh not found."
+            echo "Balatro mods cannot be launched via Steam on macOS."
+            read -p "Press Enter to return..."
+            return
+        fi
+
+        sh "$LOVELY_SCRIPT" >/dev/null 2>&1 &
+        sleep 1
+        return
+    fi
+
+    # Linux / other
+    echo "Launching Balatro via Steam..."
+    steam "steam://rungameid/$BALATRO_APPID" >/dev/null 2>&1 &
+    sleep 1
 }
 
 # ===== MAIN LOOP =====
