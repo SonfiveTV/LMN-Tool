@@ -39,11 +39,11 @@ The structure should look like this:
 
 2. **Make the scripts executable** (if needed):
 ```bash
-chmod +x tools/*.sh
+chmod +x LMN-Tool/*.sh
 ```
 3. **Run the tool**:
 ``` bash
-./tools/mod-toggle.sh
+./LMN-Tool/LMN-Tool.sh
 ```
 
 ## Usage
@@ -63,11 +63,11 @@ chmod +x tools/*.sh
 
 
 ## Configuration
-You can edit `tools/config.sh` to adjust paths, protected mods, update exclusions, or change how Balatro is launched. The default setup works for most Linux users.
+You can edit `LMN-Tool/config.sh` to adjust paths, protected mods, update exclusions, or change how Balatro is launched. The default setup works for most Linux users.
 
 ## Troubleshooting
 - If the tool does not launch Balatro, ensure Steam is installed and logged in.
-- Make sure the `tools/*.sh` scripts are executable (`chmod +x tools/*.sh`).
+- Make sure the `LMN-Tool/*.sh` scripts are executable (`chmod +x LMN-Tool/*.sh`).
 - Git must be installed for updating mods.
 
 

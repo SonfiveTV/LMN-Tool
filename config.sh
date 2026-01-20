@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==================================================
-# Balatro Mod Manager – User Configuration
+# LMN Tool – User Configuration
 # ==================================================
 # This file contains all user-specific settings.
 # Only edit this file — do NOT edit mod-toggle.sh.
@@ -9,8 +9,6 @@
 # Get the directory this config file lives in
 PARENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-
-# Absolute paths can be defined here; if left blank, fallback to defaults
 MODS_DIR="${MODS_DIR:-$PARENT_DIR/../Mods}"
 PROFILES_DIR="${PROFILES_DIR:-$PARENT_DIR/profiles}"
 
