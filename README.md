@@ -11,6 +11,7 @@ Easily update and toggle Balatro mods, save/load mod profiles, and launch straig
 ## Features
 - Toggle mods on/off with a simple menu  
 - Update GitHub-based mods with a single command  
+- Browse and install mods via the balatro-mod-index (clones the index to do the searches locally)
 - Save and load mod profiles for different setups  
 - Launch Balatro directly from the manager  
 
