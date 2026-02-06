@@ -1,6 +1,6 @@
 # LMN Tool (Lightweight Mod Navigation Tool)
 
-Easily update and toggle Balatro mods, save/load mod profiles, and launch straight into the game.
+Easily update and toggle Balatro mods, save/load mod profiles, and launch straight into Balatro.
 
 ---
 ## Requirements
