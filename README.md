@@ -1,4 +1,4 @@
-# LMN Tool (Lightweight Mod Navigation Tool)
+# Balatro Mod Terminal
 
 Easily update and toggle Balatro mods, save/load mod profiles, and launch straight into Balatro.
 
@@ -31,13 +31,13 @@ The structure should look like this:
 <Balatro Parent Folder>/
 ├── Mods/
 │ ├── <your installed mods>
-└── LMN-Tool/
-  ├── LMN-Tool.py
+└── BalatroModTerminal/
+  ├── balatro-mod-terminal.py
   └── profiles/
 ```
 
 ## Configuration
-If your folder setup is the same as shown above, no path configuration should be required, however if you would like to have the tool placed elsewhere you will need to define custom paths in `LMN-Tool.py`
+If your folder setup is the same as shown above, no path configuration should be required, however if you would like to have the tool placed elsewhere you will need to define custom paths in `balatro-mod-terminal.py`
 
 `PROTECTED_MODS` is a table containing any mods assumed to always be enabled and/or hidden from the Mods list. By default this includes `lovely`, `Steamodded`, and `smods`.
 
@@ -46,9 +46,10 @@ If your folder setup is the same as shown above, no path configuration should be
 ## Usage
 **Toggle mods**: Enter numbers separated by spaces (e.g., `1 4 7`)<br>
 **Update mods**: Press `U` to pull updates for Git cloned mods<br>
+**Browse mods**: Press `B` to browse and install new mods<br>
 **Save profile**: Press `S` to save the current setup as a profile<br>
 **Load profile**: Press `L` to select and apply a saved profile<br>
-**Launch Balatro**: Press `O` to launch Balatro<br>
+**Play Balatro**: Press `P` to play Balatro<br>
 **Quit**: Press `Q` to exit<br>
 
 

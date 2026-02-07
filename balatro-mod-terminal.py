@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LMN Tool (Lightweight Mod Navigation Tool)
+Balatro Mod Terminal
 Cross-platform Python version (Linux / macOS / Windows)
 """
 
@@ -22,7 +22,7 @@ def set_window_title(title: str):
         print(f"\033]0;{title}\007", end="")
 
 # Call this at the very start of your script
-set_window_title("LMN Tool")
+set_window_title("Balatro Mod Terminal")
 
 
 # ================= CONFIG =================
@@ -78,10 +78,10 @@ def toggle_mod(mod):
     ignore = mod / ".lovelyignore"
     if ignore.exists():
         ignore.unlink()
-        print(f"Enabled  {mod.name}")
+        # print(f"Enabled  {mod.name}")
     else:
         ignore.touch()
-        print(f"Disabled {mod.name}")
+        # print(f"Disabled {mod.name}")
 
 MOD_INDEX_DIR = CACHE_DIR / "balatro-mod-index"
 
@@ -181,7 +181,7 @@ def browse_mods():
         print(f"{i:2}) {mod['title']} — {mod['author']}")
 
     choice = input(
-        "\nEnter numbers to install (space-separated), or ENTER to cancel:\n> "
+        "\nEnter numbers to install, or ENTER to cancel:\n> "
     ).strip()
 
     if not choice:
@@ -219,8 +219,8 @@ def browse_mods():
 
 def display_menu(mods):
     clear()
-    print("     LMN Tool")
-    print("------------------\n")
+    print("Balatro Mod Terminal")
+    print("--------------------\n")
 
     for i, mod in enumerate(mods, 1):
         status = "[ON ]" if is_enabled(mod) else "[OFF]"
@@ -228,12 +228,12 @@ def display_menu(mods):
 
     print("""
 Commands:
-  Numbers → Toggle mods (space-separated)
+  # = Toggle mod(s)
+  P = Play
   U = Update mods
+  B = Browse mod index
   S = Save profile
   L = Load profile
-  M = Browse & install mods
-  O = Launch Balatro
   Q = Quit
 """)
 
@@ -333,13 +333,13 @@ def main():
 
         if upper == "Q":
             break
-        elif upper == "O":
+        elif upper == "P":
             launch_balatro()
         elif upper == "U":
             update_mods(mods)
         elif upper == "S":
             save_profile(mods)
-        elif upper == "M":
+        elif upper == "B":
             browse_mods()
         elif upper == "L":
             load_profile(mods)
